@@ -2,8 +2,9 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: hsl(210, 97%, 13%);
+  background: #208fff;
 }
+
 .box{
   width: 350px;
   padding: 40px;
@@ -12,7 +13,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background: hsla(0, 0%, 10%, 0.596);
+  background: #19191998;
   text-align: center;
 }
 .box h1{
