@@ -1,83 +1,127 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+
 <head>
-<title>Roshni Communication > login</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="expires" content="-1" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
-<!-- RBsoft Style Start -->
-<link rel="stylesheet" href="./file/style.css">
-<!-- RBsoft Style End -->
-<style type="text/css">
-	body {color: #737373; font-size: 10px; font-family: verdana;}
-	
-	textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px solid #BBBBBB;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
-	}
-	
-	a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
-	a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-	img {border: none;}
-	td { font-size: 14px; color: #7A7A7A; }
-	</style>
+	<title>Roshni Communication > login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+	<!-- RBsoft Style Start -->
+	<link rel="stylesheet" href="./file/style.css">
+	<!-- RBsoft Style End -->
+	<!-- <style type="text/css">
+		body {
+			color: #737373;
+			font-size: 10px;
+			font-family: verdana;
+		}
+
+		textarea,
+		input,
+		select {
+			background-color: #FDFBFB;
+			border: 1px solid #BBBBBB;
+			padding: 2px;
+			margin: 1px;
+			font-size: 14px;
+			color: #808080;
+		}
+
+		a,
+		a:link,
+		a:visited,
+		a:active {
+			color: #AAAAAA;
+			text-decoration: none;
+			font-size: 10px;
+		}
+
+		a:hover {
+			border-bottom: 1px dotted #c1c1c1;
+			color: #AAAAAA;
+		}
+
+		img {
+			border: none;
+		}
+
+		td {
+			font-size: 14px;
+			color: #7A7A7A;
+		}
+	</style> -->
 
 </head>
 
 <body>
-$(if chap-id)
+	$(if chap-id)
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
 		<input type="hidden" name="dst" value="$(link-orig)" />
 		<input type="hidden" name="popup" value="true" />
 	</form>
-	
+
 	<script type="text/javascript" src="/md5.js"></script>
 	<script type="text/javascript">
-	<!--
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
+	< !--
+			function doLogin() {
+				document.sendin.username.value = document.login.username.value;
+				document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+				document.sendin.submit();
+				return false;
+			}
 	//-->
 	</script>
-$(endif)
+	$(endif)
 
-<div align="center">
-<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
-</div>
+	<div align="center">
+		<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+	</div>
 
-<!-- start RBsoft Body -->
-	<form class="box" action="index.html" method="post">
-			<img src="./img/logo.png" alt="Roshni Communication" height="100px" width="150px">
-			<div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot service<br />$(if trial == 'yes')Free trial available, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
-			<input type="text" name="username" placeholder="Username" type="text" value="$(username)">
-			<input type="password" name="password" placeholder="Password">
-			<input type="submit" value="Login">
-			<br>
-			<tr><td align="center"><br /><div style="color: #c1c1c1; font-size: 9px">Powered by: RBsoft Technology, Inc.</div>
-				$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)</td></tr>
-				
-				<tr><td><marquee behavior="scroll" direction="left" VSPACE=10 scrollamount=4><strong> <span  style="color:#ffffff;">Open-WIFI</span> Call for WIFI Connection <span style="color:#29a73a;">Rasel:01921-906179,</span> Office:01711-712811 (<span  style="color:#a72959;">Roshni Communication</span>)</strong></marquee></td></tr>
-		
+	<!-- start RBsoft Body -->
+	<form class="box" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+		$(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+
+		<img src="./img/logo.png" alt="Roshni Communication" height="100px" width="150px">
+		<div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot
+			service<br />$(if trial == 'yes')Free trial available, <a style="color: #FF8080"
+				href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
+		<input type="text" name="username" placeholder="Username" type="text" value="$(username)">
+		<input type="password" name="password" placeholder="Password">
+		<input type="submit" value="Login">
+		<br>
+		<tr>
+			<td align="center"><br />
+				<div style="color: #c1c1c1; font-size: 9px">Powered by: RBsoft Technology, Inc.</div>
+				$(if error)<br />
+				<div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<marquee behavior="scroll" direction="left" VSPACE=10 scrollamount=4><strong> <span
+							style="color:#ffffff;">Open-WIFI</span> Call for WIFI Connection <span
+							style="color:#29a73a;">Rasel:01921-906179,</span> Office:01711-712811 (<span style="color:#a72959;">Roshni
+							Communication</span>)</strong></marquee>
+			</td>
+		</tr>
+
 	</form>
-<!-- Stop RBsoft Body -->
+	<!-- Stop RBsoft Body -->
 
 
 
-<script type="text/javascript">
-<!--
-  document.login.username.focus();
+	<script type="text/javascript">
+			< !--
+			document.login.username.focus();
 //-->
-</script>
+	</script>
 </body>
+
 </html>
